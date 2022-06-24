@@ -2,6 +2,7 @@
 import os
 
 import torch
+import torch.nn as nn
 import torch.distributed as dist
 
 from yolox.data import get_yolox_datadir
@@ -13,7 +14,7 @@ class Exp(MyExp):
         super(Exp, self).__init__()
         self.num_classes = 1
         self.depth = 0.33
-        self.width = 0.50
+        self.width = 0.25
         self.warmup_epochs = 1
         self.input_size = (416, 416)
         self.random_size = (10, 20)
