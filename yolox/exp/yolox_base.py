@@ -22,9 +22,9 @@ class Exp(BaseExp):
         # factor of model depth
         self.depth = 0.33
         # factor of model width
-        self.width = 0.25
+        self.width = 0.375
         # activation name. For example, if using "relu", then "silu" will be replaced to "relu".
-        self.act = "silu"
+        self.act = "lrelu"
 
         # ---------------- dataloader config ---------------- #
         # set worker to 4 for shorter dataloader init time
@@ -69,7 +69,7 @@ class Exp(BaseExp):
         # epoch number used for warmup
         self.warmup_epochs = 5
         # max training epoch
-        self.max_epoch = 100
+        self.max_epoch = 200
         # minimum learning rate during warmup
         self.warmup_lr = 0
         self.min_lr_ratio = 0.05
@@ -91,7 +91,7 @@ class Exp(BaseExp):
         self.print_interval = 10
         # eval period in epoch, for example,
         # if set to 1, model will be evaluate after every epoch.
-        self.eval_interval = 10
+        self.eval_interval = 20
         # save history checkpoint or not.
         # If set to False, yolox will only save latest and best ckpt.
         self.save_history_ckpt = True
